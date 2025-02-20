@@ -18,12 +18,12 @@ public class SedanAdapter implements ICarAdapter{
     @Override
     public List<String> fetchCarData(String query) {
         if (!isConnected) throw new IllegalStateException("Гараж для кросовера не відчинений!");
-        return List.of("Дані про кросовер: " + query);
+        return List.of("Дані про седан: " + query);
     }
 
     @Override
     public void executeUpdate(String query) {
         if (!isConnected) throw new IllegalStateException("Гараж для кросовера не відчинений!");
-        System.out.println("Оновлені дані про кросовер: " + query);
+        System.out.println("Оновлені дані про седан: " + query);
     }
 }
