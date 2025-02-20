@@ -13,9 +13,9 @@ class DBAccessProxy implements IDatabaseAccessProxy {
     @Override
     public List<String> executeQuery(int[] lineNumbers) {
         var startTime = LocalTime.now();
-        List<String> result = dbAdapter.runQuery("SELECT * FROM table WHERE id IN (" + lineNumbers.length + ")");
+        List<String> result = dbAdapter.runQuery("Вибрати з таблиці де id (" + lineNumbers.length + ")");
         var endTime = LocalTime.now();
-        System.out.println("Запрос выполнен за " + (endTime.toNanoOfDay() - startTime.toNanoOfDay()) / 1_000_000 + " мс");
+        System.out.println("Запит виконано за " + (endTime.toNanoOfDay() - startTime.toNanoOfDay()) / 1_000_000 + " мс");
         return result;
     }
 

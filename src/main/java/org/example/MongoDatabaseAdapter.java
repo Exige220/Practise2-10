@@ -9,26 +9,26 @@ class MongoDatabaseAdapter implements IDatabaseDriverAdapter {
     @Override
     public void connect(String url) {
         isConnected = true;
-        System.out.println("Подключено к MongoDB: " + url);
+        System.out.println("Під'єднано до MongoDB: " + url);
     }
 
     @Override
     public void disconnect() {
         isConnected = false;
-        System.out.println("Отключено от MongoDB.");
+        System.out.println("Від'єднано від MongoDB.");
     }
 
     @Override
     public List<String> runQuery(String query) {
-        if (!isConnected) throw new IllegalStateException("MongoDB не подключён!");
+        if (!isConnected) throw new IllegalStateException("MongoDB не під'єднано!");
         List<String> results = new ArrayList<>();
-        results.add("Результат из MongoDB для запроса: " + query);
+        results.add("Результат з MongoDB для запита: " + query);
         return results;
     }
 
     @Override
     public void executeUpdate(String query) {
-        if (!isConnected) throw new IllegalStateException("MongoDB не подключён!");
-        System.out.println("Обновление в MongoDB: " + query);
+        if (!isConnected) throw new IllegalStateException("MongoDB не під'єднано!");
+        System.out.println("Оновлення в MongoDB: " + query);
     }
 }

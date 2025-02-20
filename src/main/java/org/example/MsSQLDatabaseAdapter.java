@@ -9,26 +9,26 @@ class MsSQLDatabaseAdapter implements IDatabaseDriverAdapter {
     @Override
     public void connect(String url) {
         isConnected = true;
-        System.out.println("Подключено к MS SQL: " + url);
+        System.out.println("Під'єднано до MS SQL: " + url);
     }
 
     @Override
     public void disconnect() {
         isConnected = false;
-        System.out.println("Отключено от MS SQL.");
+        System.out.println("Від'єднано від MS SQL.");
     }
 
     @Override
     public List<String> runQuery(String query) {
-        if (!isConnected) throw new IllegalStateException("MS SQL не подключён!");
+        if (!isConnected) throw new IllegalStateException("MS SQL не під'єднано!");
         List<String> results = new ArrayList<>();
-        results.add("Результат из MS SQL для запроса: " + query);
+        results.add("Результат з MS SQL для запита: " + query);
         return results;
     }
 
     @Override
     public void executeUpdate(String query) {
-        if (!isConnected) throw new IllegalStateException("MS SQL не подключён!");
-        System.out.println("Обновление в MS SQL: " + query);
+        if (!isConnected) throw new IllegalStateException("MS SQL не під'єднано!");
+        System.out.println("Оновлення в MS SQL: " + query);
     }
 }

@@ -12,7 +12,7 @@ class DatabaseController {
 
         if (dbProxy.checkDatabaseStatus()) {
             int[] queryLines = {1, 2, 3, 4, 5};
-            System.out.println("Полученные данные: " + dbProxy.executeQuery(queryLines));
+            System.out.println("Отримані дані: " + dbProxy.executeQuery(queryLines));
             dbProxy.executeQueryNoResult(queryLines);
             dbProxy.commit();
         }
